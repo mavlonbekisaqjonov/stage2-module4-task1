@@ -13,16 +13,7 @@ public class Employee {
     private String email;
     private String carNumber;
 
-    public Employee(String name, String lastName, String position, String phone, String email, String carNumber) {
-
-        this.name = name;
-        this.lastName = lastName;
-        this.position = position;
-        this.phone = phone;
-        this.email = email;
-        this.carNumber = carNumber;
-
-    }
+    public Employee() {}
 
     public String getName() {
         return name;
@@ -115,8 +106,15 @@ public class Employee {
             return this;
         }
 
-        public Employee getEmployee() {
-            return new Employee(name, lastName, position, phone, email, carNumber);
+        public Employee build() {
+            Employee emp = new Employee();
+            emp.setName(this.name);
+            emp.setLastName(this.lastName);
+            emp.setPosition(this.position);
+            emp.setPhone(this.phone);
+            emp.setEmail(this.email);
+            emp.setCarNumber(this.carNumber);
+            return emp;
         }
     }
 }
